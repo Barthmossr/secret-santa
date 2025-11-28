@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Request } from '@/types'
+import { addOwnedRequest } from '@/lib/requestOwnership'
 
 interface RequestFormProps {
   initialData?: Request
@@ -42,6 +43,12 @@ export function RequestForm({ initialData }: RequestFormProps) {
       if (!res.ok) {
         const err = await res.json()
         throw new Error(err.error || 'Falha ao salvar')
+      }
+
+      const result = await res.json()
+      
+      if (!initialData) {
+        addOwnedRequest(result.id)
       }
 
       router.push('/')

@@ -1,23 +1,30 @@
+'use client'
+
 import Link from 'next/link'
 import { Request } from '@/types'
+import { isOwnedRequest } from '@/lib/requestOwnership'
 
 interface RequestCardProps {
   request: Request
 }
 
 export function RequestCard({ request }: RequestCardProps) {
+  const isOwned = isOwnedRequest(request.id)
+
   return (
     <div className="bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-red-100 group">
       <div className="flex justify-between items-start mb-4">
         <h3 className="text-xl font-bold text-red-800 group-hover:text-red-600 transition-colors">
           {request.name}
         </h3>
-        <Link
-          href={`/edit/${request.id}`}
-          className="text-sm text-gray-500 hover:text-red-600 transition-colors px-3 py-1 rounded-full hover:bg-red-50"
-        >
-          ✏️ Editar
-        </Link>
+        {isOwned && (
+          <Link
+            href={`/edit/${request.id}`}
+            className="text-sm text-gray-500 hover:text-red-600 transition-colors px-3 py-1 rounded-full hover:bg-red-50"
+          >
+            ✏️ Editar
+          </Link>
+        )}
       </div>
       
       <ul className="space-y-3">
