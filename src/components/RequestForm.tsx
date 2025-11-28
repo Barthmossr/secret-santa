@@ -75,7 +75,7 @@ export function RequestForm({ initialData }: RequestFormProps) {
           id="name"
           required
           defaultValue={initialData?.name}
-          className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
+          className="w-full px-4 py-2 rounded-lg border border-gray-200 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
           placeholder="Ex: João Silva"
         />
       </div>
@@ -95,7 +95,7 @@ export function RequestForm({ initialData }: RequestFormProps) {
             id="item_1"
             required
             defaultValue={initialData?.item_1}
-            className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
+            className="w-full px-4 py-2 rounded-lg border border-gray-200 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
             placeholder="Ex: Camisa Azul Tamanho M"
           />
         </div>
@@ -109,7 +109,7 @@ export function RequestForm({ initialData }: RequestFormProps) {
             name="item_2"
             id="item_2"
             defaultValue={initialData?.item_2}
-            className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all"
+            className="w-full px-4 py-2 rounded-lg border border-gray-200 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all"
             placeholder="Ex: Livro 'Sapiens'"
           />
         </div>
@@ -123,7 +123,7 @@ export function RequestForm({ initialData }: RequestFormProps) {
             name="item_3"
             id="item_3"
             defaultValue={initialData?.item_3}
-            className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-all"
+            className="w-full px-4 py-2 rounded-lg border border-gray-200 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-all"
             placeholder="Ex: Cartão Presente"
           />
         </div>
